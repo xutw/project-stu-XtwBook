@@ -10,5 +10,17 @@
 	<select id="findById" parameterType="int" resultType="xtw.book.pojo.XtwUser">
 		select * from xtwUser where id=#{id}
 	</select>
+	<insert id="insertUser" parameterType="XtwUser" statementType="PREPARED"
+		keyProperty="id" useGeneratedKeys="true">
+		insert into xtwUser
+		(userName,password) values
+		(#{userName},#{password})
+	</insert>
+	<update id="updateUser" parameterType="XtwUser">
+		UPDATE xtwuser SET
+		userName=#{userName},
+		password=#{password}
+		WHERE id = #{id}
+	</update>
 	
 </mapper>

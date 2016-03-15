@@ -7,6 +7,11 @@
 
 <configuration>
 
+	<!-- 别名配置 -->
+  <typeAliases>
+  	<typeAlias alias="XtwUser"  type="xtw.book.pojo.XtwUser" />
+  </typeAliases>
+  
   <!-- 连库配置-->
   <environments default="development">
     <environment id="development">
@@ -24,6 +29,7 @@
 
   <mappers>
 	    <mapper resource="xtw/book/map/xtwUser.xml"/><!-- 绝对路径 -->
+	    <mapper class="xtw.book.map.InterfaceXtwUserMap"/><!-- 接口方式 -->
   </mappers>
 
 </configuration>
