@@ -23,6 +23,25 @@
 		WHERE id = #{id}
 	</update>
 	
+	<select id="loginSelect" resultType="XtwUser" parameterType="hashmap">
+		select * from XtwUser where userName=#{userName} and password=#{password}
+	</select>
+	
+	<select id="login2" resultType="XtwUser" parameterType="XtwUser">
+		select * from XtwUser where userName=#{userName} and password=#{password}
+	</select>
+	<select id="selectXtwUserList" resultType="XtwUser">
+		select * from XtwUser
+	</select>
+	<resultMap id="XtwUserMap" type="XtwUser"> 
+		<id property="id" column="id" /> 
+		<result property="userName" column="userName"/> 
+		<result property="password" column="password"/> 
+	</resultMap>
+	<select id="selectUsers" resultMap="XtwUserMap"> 
+		select id, userName, password from XtwUser   
+	</select>
+	
 	<resultMap id="visitMap" type="XtwUser">
 		<id property="id" column="id" />
 		<result property="userName" column="userName" />
