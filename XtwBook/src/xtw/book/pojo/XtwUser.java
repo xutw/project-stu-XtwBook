@@ -10,6 +10,15 @@ public class XtwUser {
 	private String userName;//用户名
 	private String password;//密码
 	
+	public XtwUser() {
+		super();
+	}
+	public XtwUser(String userName, String password) {
+		super();
+		this.userName = userName;
+		this.password = password;
+	}
+	
 	public int getId() {
 		return id;
 	}

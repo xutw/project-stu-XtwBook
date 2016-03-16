@@ -29,8 +29,8 @@
 			</constructor>
 		</association>
 	</resultMap>
-	<select id="selectAuthorJoin" resultMap="XtwAuthorMap"><!-- 联合查询 -->
-	<!-- <select id="selectAuthorJoin" resultMap="XtwAuthorMapByCon"> --><!-- 构造查询 -->
+	<!-- <select id="selectAuthorJoin" resultMap="XtwAuthorMap"> --><!-- 联合查询 -->
+	<select id="selectAuthorJoin" resultMap="XtwAuthorMapByCon"><!-- 构造查询 -->
 		select * from author inner join xtwUser 
 			on xtwuser.id=author.userID
 	</select>
