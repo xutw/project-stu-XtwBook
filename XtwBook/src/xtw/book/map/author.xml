@@ -5,4 +5,33 @@
 		    insert into Author(userID,realName,IDCard) 
 		    	values(#{xtwUser.id},#{realName},#{IDCard})
 	</insert>
+	
+	<resultMap id="XtwAuthorMap" type="Author">
+		<id property="id" column="author.id" />
+		<result property="realName" column="realName" />
+		<result property="IDCard" column="IDCard" />
+		<association property="xtwUser" column="userID"
+			javaType="XtwUser">
+			<id property="id" column="xtwUser.id" />
+			<result property="userName" column="userName" />
+			<result property="password" column="password" />
+		</association>
+	</resultMap>
+	<resultMap id="XtwAuthorMapByCon" type="Author">
+		<id property="id" column="author.id" />
+		<result property="realName" column="realName" />
+		<result property="IDCard" column="IDCard" />
+		<association property="xtwUser" column="userID"
+			javaType="XtwUser">
+			<constructor>
+					<arg column="userName" javaType="String" />
+					<arg column="password" javaType="String" />
+			</constructor>
+		</association>
+	</resultMap>
+	<select id="selectAuthorJoin" resultMap="XtwAuthorMap"><!-- 联合查询 -->
+	<!-- <select id="selectAuthorJoin" resultMap="XtwAuthorMapByCon"> --><!-- 构造查询 -->
+		select * from author inner join xtwUser 
+			on xtwuser.id=author.userID
+	</select>
 </mapper>

@@ -2,11 +2,11 @@ package xtw.book.pojo;
 
 /**
  * 用户表
- * @author wsdhr
+ * @author xutw
  *
  */
 public class XtwUser {
-	private int id;//ID自增主键
+	private int id;			//ID自增主键
 	private String userName;//用户名
 	private String password;//密码
 	
