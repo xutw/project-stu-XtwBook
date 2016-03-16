@@ -10,6 +10,7 @@
 	<!-- 别名配置 -->
   <typeAliases>
   	<typeAlias alias="XtwUser"  type="xtw.book.pojo.XtwUser" />
+  	<typeAlias alias="Author"  type="xtw.book.pojo.Author" />
   </typeAliases>
   
   <!-- 连库配置-->
@@ -30,6 +31,7 @@
   <mappers>
 	    <mapper resource="xtw/book/map/xtwUser.xml"/><!-- 绝对路径 -->
 	    <mapper class="xtw.book.map.InterfaceXtwUserMap"/><!-- 接口方式 -->
+	    <mapper resource="xtw/book/map/author.xml" />
   </mappers>
 
 </configuration>

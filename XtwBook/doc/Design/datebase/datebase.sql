@@ -6,3 +6,10 @@ CREATE TABLE `xtwuser` (
   `password` VARCHAR(20) NULL,
   PRIMARY KEY (`id`));
   
+CREATE TABLE `xtwBook`.`author` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `realName` VARCHAR(20) NULL,
+  `userID` INT NULL,
+  `IDCard` VARCHAR(20) NULL,
+  PRIMARY KEY (`id`));
+  
