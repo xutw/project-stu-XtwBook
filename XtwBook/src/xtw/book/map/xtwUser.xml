@@ -23,4 +23,17 @@
 		WHERE id = #{id}
 	</update>
 	
+	<resultMap id="visitMap" type="XtwUser">
+		<id property="id" column="id" />
+		<result property="userName" column="userName" />
+		<collection property="visitList" javaType="ArrayList"
+			column="visitID" ofType="xtw.book.pojo.Visit">
+			<result property="visitID" column="visitID" />
+			<result property="visitIP" column="visitIP" />
+			<result property="visitDate" column="visitDate" />
+		</collection>
+	</resultMap>
+	<select id="selectVisit" resultMap="visitMap">
+		select * from XtwUser inner join visit on xtwuser.id=visit.userID
+	</select>
 </mapper>

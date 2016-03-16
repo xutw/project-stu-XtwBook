@@ -4,12 +4,18 @@ CREATE TABLE `xtwuser` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR(20) NULL,
   `password` VARCHAR(20) NULL,
-  PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;;
+  PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
 CREATE TABLE `xtwBook`.`author` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `realName` VARCHAR(20) NULL,
   `userID` INT NULL,
   `IDCard` VARCHAR(20) NULL,
-  PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;;
+  PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
+CREATE TABLE `xtwBook`.`visit` (
+  `visitID` INT NOT NULL,
+  `userID` INT NULL,
+  `visitDate` DATETIME NULL,
+  `visitIP` VARCHAR(30) NULL,
+  PRIMARY KEY (`visitID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
