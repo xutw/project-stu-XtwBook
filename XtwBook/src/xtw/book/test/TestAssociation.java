@@ -30,15 +30,15 @@ public class TestAssociation {
 				.build(reader);
 		session = sqlMapper.openSession();
 		try{
-			List<Author> ap = session.selectList("selectAuthorJoin");//联合查询与构造查询
-//			List<Author> ap=session.selectList("selectAuthor");//子查询
+//			List<Author> ap = session.selectList("selectAuthorJoin");//联合查询与构造查询
+			List<Author> ap=session.selectList("selectAuthor");	//子查询
 			for(Author temp:ap)
 			{
-				System.out.println("作者真实姓名="+temp.getRealName()+
-						"对应的用户名="+temp.getXtwUser().getUserName()); 
-//				System.out.println("作者真实姓名="+temp.getRealName());
-//				System.out.println("懒加载应用了");
-//				System.out.println("用户名="+temp.getXtwUser().getUserName());
+//				System.out.println("作者真实姓名="+temp.getRealName()+
+//						"对应的用户名="+temp.getXtwUser().getUserName()); 
+				System.out.println("作者真实姓名="+temp.getRealName());
+				System.out.println("懒加载应用了");
+				System.out.println("用户名="+temp.getXtwUser().getUserName());
 			}
 			
 		}

@@ -34,4 +34,16 @@
 		select * from author inner join xtwUser 
 			on xtwuser.id=author.userID
 	</select>
+	
+	<resultMap id="XtwAuthorSubMap" type="Author">
+		<id property="id" column="author.id" />
+		<result property="realName" column="realName" />
+		<result property="IDCard" column="IDCard" />
+		<association property="xtwUser" column="userID"
+			javaType="XtwUser" select="findById">
+		</association>
+	</resultMap>
+	<select id="selectAuthor" resultMap="XtwAuthorSubMap">
+		select * from author 
+	</select>
 </mapper>
